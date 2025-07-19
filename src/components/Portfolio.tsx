@@ -305,22 +305,14 @@ export default function Portfolio() {
         <div className="absolute inset-0 bg-background/70" />
         <ASCIIArt />
         
-        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.8 }}
-            className="mb-8"
-          >
-            {/* ASCII Art Profile */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.3 }}
-              animate={heroInView ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 1, delay: 0.2 }}
-              className="mb-6"
-            >
-              <div className="relative mx-auto w-fit">
-                <pre className="text-primary text-xs md:text-sm leading-tight font-mono glow-primary">
+        {/* Cool Terminal ASCII Art */}
+        <motion.div
+          initial={{ opacity: 0, x: -100 }}
+          animate={heroInView ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 1, delay: 0.8 }}
+          className="hidden lg:block absolute left-8 top-1/2 transform -translate-y-1/2 z-10"
+        >
+          <pre className="text-primary/60 text-xs leading-tight font-mono glow-primary">
 {`    ##    @@#
 ,################C
 @################@##
@@ -338,10 +330,16 @@ T"@  .;; .^M@.@.*
 {    }  #"GpGb   [
 ,    3 * @#####=.
 '      ^@##b   ($  !`}
-                </pre>
-              </div>
-            </motion.div>
-            
+          </pre>
+        </motion.div>
+        
+        <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.8 }}
+            className="mb-8"
+          >
             <div className="inline-flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-primary/30 mb-6">
               <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse" />
               <span className="text-sm text-muted-foreground">Available for opportunities</span>
