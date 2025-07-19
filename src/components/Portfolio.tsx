@@ -312,20 +312,33 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
-            {/* Profile Picture */}
+            {/* ASCII Art Profile */}
             <motion.div
               initial={{ opacity: 0, scale: 0.3 }}
               animate={heroInView ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 1, delay: 0.2 }}
               className="mb-6"
             >
-              <div className="relative w-32 h-32 mx-auto">
-                <img 
-                  src={profilePic} 
-                  alt="Sumit Pandey" 
-                  className="w-full h-full rounded-full object-cover border-4 border-primary/30 glow-primary"
-                />
-                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-transparent" />
+              <div className="relative mx-auto w-fit">
+                <pre className="text-primary text-xs md:text-sm leading-tight font-mono glow-primary">
+{`    ##    @@#
+,################C
+@################@##
+7###*^^^7N7^^@####
+@#@b        ^@#@^
+##^,,,,        ,#^
+.@####+" ,#####=
+. '555' ,'5555b|
+T"@  .;; .^M@.@.*
+   %p|| ^^,' #
+    ^Mp   #T
+  .b'"@@b'^
+    .   '~b 3-
+,^'  '  ^v  #  b  *.
+{    }  #"GpGb   [
+,    3 * @#####=.
+'      ^@##b   ($  !`}
+                </pre>
               </div>
             </motion.div>
             
