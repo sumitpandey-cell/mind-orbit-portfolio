@@ -57,6 +57,39 @@ const TypewriterText = ({ texts }: { texts: string[] }) => {
   );
 };
 
+// ASCII Art component
+const ASCIIArt = () => {
+  const asciiArt = `
+    @@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@@@@@@
+ @@@@@@@@@@@@@@@@@@@@@@
+@@@@@@    @@@@    @@@@@@
+@@@@  @@@@@@@@@@@@  @@@@
+@@@@  @@@@@@@@@@@@  @@@@
+@@@@@@    @@@@    @@@@@@
+ @@@@@@@@@@@@@@@@@@@@@@
+  @@@@@@@@@@@@@@@@@@@@
+    @@@@@@@@@@@@@@@@
+      @@@@@@@@@@@@
+        @@@@@@@@
+          @@@@
+           @@
+  `;
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, scale: 0.8 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
+      className="hidden lg:block absolute right-8 top-1/2 transform -translate-y-1/2 z-10"
+    >
+      <pre className="text-primary/30 text-xs leading-tight font-mono">
+        {asciiArt}
+      </pre>
+    </motion.div>
+  );
+};
+
 // Floating particles component
 const FloatingParticles = () => {
   const particles = Array.from({ length: 20 }, (_, i) => i);
@@ -269,6 +302,7 @@ export default function Portfolio() {
         }}
       >
         <div className="absolute inset-0 bg-background/70" />
+        <ASCIIArt />
         
         <div className="relative z-10 max-w-4xl mx-auto px-4 text-center">
           <motion.div
