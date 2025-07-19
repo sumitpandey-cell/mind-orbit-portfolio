@@ -20,6 +20,7 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
 import heroBg from '@/assets/hero-bg.jpg';
+import profilePic from '@/assets/profile-picture.jpg';
 
 // Typing animation component
 const TypewriterText = ({ texts }: { texts: string[] }) => {
@@ -311,6 +312,23 @@ export default function Portfolio() {
             transition={{ duration: 0.8 }}
             className="mb-8"
           >
+            {/* Profile Picture */}
+            <motion.div
+              initial={{ opacity: 0, scale: 0.3 }}
+              animate={heroInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 1, delay: 0.2 }}
+              className="mb-6"
+            >
+              <div className="relative w-32 h-32 mx-auto">
+                <img 
+                  src={profilePic} 
+                  alt="Sumit Pandey" 
+                  className="w-full h-full rounded-full object-cover border-4 border-primary/30 glow-primary"
+                />
+                <div className="absolute inset-0 rounded-full bg-gradient-to-br from-primary/20 to-transparent" />
+              </div>
+            </motion.div>
+            
             <div className="inline-flex items-center gap-2 bg-card/50 px-4 py-2 rounded-full border border-primary/30 mb-6">
               <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse" />
               <span className="text-sm text-muted-foreground">Available for opportunities</span>
